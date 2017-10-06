@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+public void clickRead(View v){
+    SharedPreferences sp=getSharedPreferences("data",MODE_PRIVATE);
+    String str=sp.getString("myvalue","default");
+    Toast.makeText(MainActivity.this,str,Toast.LENGTH_SHORT).show();
+}
 
 }
